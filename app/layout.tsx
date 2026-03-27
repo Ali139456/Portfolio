@@ -28,14 +28,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
+        suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#f5f8ff] text-slate-900 min-h-screen flex flex-col`}
       >
         <CyberBackground />
         <Sidebar /> {/* Added Sidebar component */}
         <Navbar />
-        <main className="flex-grow pt-20"> {/* pt-20 to account for fixed navbar */}
+        <main className="flex-grow pt-20 w-full min-w-0 overflow-x-clip">
           {children}
         </main>
         <Footer />

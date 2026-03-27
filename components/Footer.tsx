@@ -14,21 +14,20 @@ const Footer = () => {
     ];
 
     return (
-        <footer className="relative border-t border-slate-200 mt-20 overflow-hidden bg-white/60">
+        <footer className="relative border-t border-slate-200 mt-0 overflow-hidden bg-white/60">
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[200px] bg-sky-200/25 rounded-full blur-[100px]" />
 
-            <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-16">
-                <div className="flex flex-col md:flex-row justify-between items-center gap-8">
+            <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 pt-[30px] pb-[35px]">
+                <div className="flex flex-col items-center justify-center gap-8 text-center md:flex-row md:items-center md:justify-between md:text-left">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-center md:text-left"
+                        className="w-full md:w-auto text-center md:text-left"
                     >
                         <Link href="/" className="inline-block">
                             <h2 className="text-2xl font-bold tracking-tighter font-space text-slate-900">
                                 M<span className="holo-text">AS</span>
-                                <span className="text-sky-600">.</span>
                             </h2>
                         </Link>
                         <p className="text-slate-500 text-sm mt-2 font-space">Full-stack developer · MERN · Next.js · Shopify</p>
@@ -61,9 +60,9 @@ const Footer = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="text-slate-500 text-sm text-center md:text-right font-space"
+                        className="w-full text-slate-500 text-sm text-center md:w-auto md:text-right font-space"
                     >
-                        <p>&copy; {new Date().getFullYear()} Muhammad Ali Shibli.</p>
+                        <p>&copy; {new Date().getFullYear()} Muhammad Ali Shibli</p>
                     </motion.div>
                 </div>
             </div>

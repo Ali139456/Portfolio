@@ -9,7 +9,7 @@ import { liveProductsData } from "@/data/products";
 
 const LiveProducts = () => {
     return (
-        <section id="products" className="py-16 relative z-10">
+        <section id="products" className="relative z-10 pt-16 pb-[35px]">
             <div className="container mx-auto px-6 md:px-12 max-w-6xl">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -54,16 +54,16 @@ const LiveProducts = () => {
                         >
                             <Link
                                 href={`/live-products/${product.slug}`}
-                                className="glass-card rounded-2xl p-6 flex flex-col h-full hover:border-emerald-200 transition-all duration-300 group cursor-pointer"
+                                className="glass-card rounded-2xl p-6 flex flex-col h-full items-center text-center hover:border-emerald-200 transition-all duration-300 group cursor-pointer sm:items-stretch sm:text-left"
                             >
-                                <div className="flex justify-between items-start mb-4">
-                                    <div>
-                                        <div className="flex items-center gap-2 mb-1">
+                                <div className="mb-4 flex w-full flex-col items-center gap-3 sm:flex-row sm:items-start sm:justify-between">
+                                    <div className="flex flex-col items-center sm:items-start">
+                                        <div className="mb-1 flex items-center gap-2">
                                             <h3 className="text-slate-900 font-bold font-space text-lg group-hover:text-emerald-700 transition-colors">
                                                 {product.name}
                                             </h3>
                                         </div>
-                                        <div className="flex items-center gap-1.5 text-xs font-mono text-emerald-700">
+                                        <div className="flex items-center justify-center gap-1.5 text-xs font-mono text-emerald-700 sm:justify-start">
                                             <Activity size={12} className="animate-pulse" />
                                             <span>LIVE</span>
                                         </div>
@@ -84,7 +84,7 @@ const LiveProducts = () => {
                                     {product.description}
                                 </p>
 
-                                <div className="flex flex-wrap gap-2 mt-auto">
+                                <div className="mt-auto flex flex-wrap justify-center gap-2 sm:justify-start">
                                     {product.tags.map((tag, i) => (
                                         <span
                                             key={i}
@@ -95,7 +95,7 @@ const LiveProducts = () => {
                                     ))}
                                 </div>
 
-                                <div className="mt-4 flex items-center gap-2 text-xs text-emerald-700 font-space font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div className="mt-4 flex items-center justify-center gap-2 text-xs text-emerald-700 font-space font-semibold opacity-0 group-hover:opacity-100 transition-opacity sm:justify-start">
                                     <CheckCircle2 size={14} />
                                     View case notes
                                 </div>

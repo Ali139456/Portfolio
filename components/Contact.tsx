@@ -75,7 +75,7 @@ const Contact = () => {
     ];
 
     return (
-        <section id="contact" className="py-16 relative">
+        <section id="contact" className="relative pt-16 pb-[35px]">
             <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-violet-200/30 rounded-full blur-[120px] pointer-events-none" />
             <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-sky-200/30 rounded-full blur-[120px] pointer-events-none" />
 
@@ -109,7 +109,7 @@ const Contact = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2, duration: 0.7 }}
-                        className="space-y-4"
+                        className="mx-auto flex w-full max-w-md flex-col space-y-4 md:mx-0 md:max-w-none"
                     >
                         {contactLinks.map((link, i) => (
                             <motion.a
@@ -118,16 +118,16 @@ const Contact = () => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 whileHover={{ x: 6 }}
-                                className="flex items-center gap-4 glass-card p-5 rounded-2xl group transition-all duration-500 hover:border-sky-200 border border-transparent block"
+                                className="flex flex-col items-center gap-3 text-center glass-card p-5 rounded-2xl group transition-all duration-500 hover:border-sky-200 border border-transparent sm:flex-row sm:items-center sm:gap-4 sm:text-left"
                             >
                                 <div
-                                    className={`p-3 rounded-xl border ${link.className} group-hover:scale-105 transition-transform`}
+                                    className={`p-3 rounded-xl border ${link.className} group-hover:scale-105 transition-transform shrink-0`}
                                 >
                                     {link.icon}
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-slate-900 font-space text-sm">{link.title}</h3>
-                                    <p className="text-slate-600 text-sm font-space">{link.value}</p>
+                                    <p className="text-slate-600 text-sm font-space break-words">{link.value}</p>
                                 </div>
                             </motion.a>
                         ))}
@@ -137,14 +137,14 @@ const Contact = () => {
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.6 }}
-                            className="glass-card rounded-2xl p-5 mt-4 border-slate-100"
+                            className="glass-card rounded-2xl p-5 mt-4 border-slate-100 text-center md:text-left"
                         >
-                            <div className="flex gap-2 mb-3">
+                            <div className="mb-3 flex justify-center gap-2 md:justify-start">
                                 <div className="w-3 h-3 rounded-full bg-red-400/80" />
                                 <div className="w-3 h-3 rounded-full bg-amber-400/80" />
                                 <div className="w-3 h-3 rounded-full bg-emerald-400/80" />
                             </div>
-                            <div className="font-mono text-sm text-slate-600 space-y-1">
+                            <div className="font-mono text-sm text-slate-600 space-y-1 inline-block text-left">
                                 <p>
                                     <span className="text-violet-600">const</span> <span className="text-sky-600">availability</span>{" "}
                                     = <span className="text-emerald-600">&quot;open to freelance & roles&quot;</span>;
@@ -163,7 +163,7 @@ const Contact = () => {
                         viewport={{ once: true }}
                         transition={{ delay: 0.4, duration: 0.7 }}
                         onSubmit={handleSubmit}
-                        className="space-y-5 glass-card p-8 rounded-2xl relative overflow-hidden border-slate-100"
+                        className="mx-auto w-full max-w-md space-y-5 glass-card p-8 rounded-2xl relative overflow-hidden border-slate-100 md:mx-0 md:max-w-none"
                     >
                         <div className="absolute -top-32 -right-32 w-64 h-64 bg-sky-200/40 rounded-full blur-3xl pointer-events-none" />
 

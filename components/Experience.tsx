@@ -55,7 +55,7 @@ const Experience = () => {
     ];
 
     return (
-        <section id="experience" className="relative py-20 md:py-28 overflow-hidden">
+        <section id="experience" className="relative overflow-hidden pt-20 pb-[35px] md:pt-28">
             {/* Atmospheric background */}
             <div
                 className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_90%_60%_at_50%_-30%,rgba(56,189,248,0.18),transparent_55%),radial-gradient(ellipse_70%_50%_at_100%_50%,rgba(167,139,250,0.12),transparent_50%),radial-gradient(ellipse_60%_40%_at_0%_80%,rgba(34,211,238,0.1),transparent_45%)]"
@@ -143,7 +143,7 @@ const Experience = () => {
                                     className="relative flex flex-col gap-6 md:flex-row md:gap-10"
                                 >
                                     {/* Mobile node */}
-                                    <div className="flex items-center gap-4 md:hidden">
+                                    <div className="flex items-center justify-center gap-4 md:hidden">
                                         <div
                                             className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br ${exp.nodeFrom} ${exp.nodeVia} ${exp.nodeTo} text-sm font-black text-white shadow-lg ring-4 ring-white font-mono`}
                                         >
@@ -191,9 +191,9 @@ const Experience = () => {
                                                 <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white to-transparent opacity-80" />
 
                                                 <div className="relative p-6 sm:p-8 md:p-9">
-                                                    <div className="mb-6 flex flex-wrap items-start justify-between gap-4">
-                                                        <div>
-                                                            <div className="mb-2 flex flex-wrap items-center gap-2">
+                                                    <div className="mb-6 flex flex-col items-center text-center gap-4 md:flex-row md:flex-wrap md:items-start md:justify-between md:text-left">
+                                                        <div className="w-full md:w-auto">
+                                                            <div className="mb-2 flex flex-wrap items-center justify-center gap-2 md:justify-start">
                                                                 <h3 className="text-xl font-bold tracking-tight text-slate-900 sm:text-2xl font-space md:text-[1.65rem]">
                                                                     {exp.title}
                                                                 </h3>
@@ -208,7 +208,7 @@ const Experience = () => {
                                                                 {exp.company}
                                                             </p>
                                                         </div>
-                                                        <div className="flex items-center gap-2 rounded-2xl border border-slate-200/80 bg-slate-50/80 px-4 py-2 text-xs font-mono text-slate-600 backdrop-blur-sm">
+                                                        <div className="flex shrink-0 items-center gap-2 rounded-2xl border border-slate-200/80 bg-slate-50/80 px-4 py-2 text-xs font-mono text-slate-600 backdrop-blur-sm">
                                                             <Calendar className="h-3.5 w-3.5 text-violet-500" />
                                                             {exp.duration}
                                                         </div>
@@ -218,7 +218,7 @@ const Experience = () => {
                                                         {exp.achievements.map((line, i) => (
                                                             <li
                                                                 key={i}
-                                                                className="flex gap-3 text-sm leading-relaxed text-slate-600 font-space sm:text-[0.9375rem]"
+                                                                className="flex flex-col items-center gap-2 text-center text-sm leading-relaxed text-slate-600 font-space sm:flex-row sm:items-start sm:gap-3 sm:text-left sm:text-[0.9375rem]"
                                                             >
                                                                 <span
                                                                     className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br ${exp.nodeFrom} ${exp.nodeVia} ${exp.nodeTo} shadow-sm`}
@@ -230,7 +230,7 @@ const Experience = () => {
                                                         ))}
                                                     </ul>
 
-                                                    <div className="flex flex-wrap gap-2 border-t border-slate-100 pt-6">
+                                                    <div className="flex flex-wrap justify-center gap-2 border-t border-slate-100 pt-6 md:justify-start">
                                                         {exp.tags.map((tag) => (
                                                             <span
                                                                 key={tag}

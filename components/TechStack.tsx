@@ -93,7 +93,7 @@ const highlights = [
         accent: "from-sky-500 to-indigo-500",
     },
     {
-        title: "Data layer",
+        title: "Database",
         body: "MongoDB & Postgres/Supabase patterns—indexes, auth hooks, and sensible schemas.",
         accent: "from-emerald-500 to-cyan-500",
     },
@@ -106,7 +106,7 @@ const highlights = [
 
 const TechStack = () => {
     return (
-        <section id="tech" className="py-16 relative">
+        <section id="skills" className="relative pt-16 pb-[35px]">
             <div className="container mx-auto px-6 md:px-12 max-w-6xl">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -121,13 +121,14 @@ const TechStack = () => {
                         viewport={{ once: true }}
                         className="inline-block px-4 py-1.5 rounded-full border border-indigo-200 bg-white text-indigo-700 text-xs font-semibold uppercase tracking-[0.2em] mb-6 font-space shadow-sm"
                     >
-                        Stack
+                        Skills
                     </motion.span>
                     <h2 className="text-4xl md:text-5xl font-bold mb-6 font-space tracking-tight text-slate-900">
-                        Tools for <span className="holo-text">modern web</span>
+                        From first pixel to <span className="holo-text">last deploy</span>
                     </h2>
-                    <p className="text-slate-600 max-w-2xl mx-auto font-space text-lg">
-                        A practical full-stack toolkit—what I use today for client work and side projects.
+                    <p className="text-slate-600 max-w-2xl mx-auto font-space text-lg leading-relaxed">
+                        Battle-tested tools I reach for daily—so client builds and side projects ship fast, stay
+                        maintainable, and don&apos;t fall over when traffic shows up.
                     </p>
                 </motion.div>
 
@@ -139,9 +140,9 @@ const TechStack = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.08, duration: 0.5 }}
-                            className="rounded-2xl p-6 bg-white border border-slate-100 shadow-sm shadow-sky-100/50"
+                            className="rounded-2xl p-6 bg-white border border-slate-100 shadow-sm shadow-sky-100/50 text-center md:text-left"
                         >
-                            <div className={`h-1 w-14 rounded-full bg-gradient-to-r ${h.accent} mb-4`} />
+                            <div className={`h-1 w-14 rounded-full bg-gradient-to-r ${h.accent} mb-4 mx-auto md:mx-0`} />
                             <h3 className="text-lg font-bold text-slate-900 mb-2 font-space">{h.title}</h3>
                             <p className="text-sm text-slate-600 leading-relaxed font-space">{h.body}</p>
                         </motion.div>
@@ -156,7 +157,7 @@ const TechStack = () => {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: catIndex * 0.04, duration: 0.45 }}
-                                className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-4 mb-6 border-b border-slate-200 pb-3"
+                                className="flex flex-col items-center text-center gap-2 mb-6 border-b border-slate-200 pb-3 md:flex-row md:items-baseline md:gap-4 md:text-left"
                             >
                                 <h3 className="text-xl font-bold text-slate-900 font-space">{category.title}</h3>
                                 <span className="text-xs text-slate-500 font-mono">{`// ${category.description}`}</span>

@@ -45,7 +45,7 @@ function TiltCard({ icon, title, description, gradient, index }: CardProps) {
             }}
             className="relative group cursor-default"
         >
-            <div className="glass-card rounded-2xl p-8 h-full transition-all duration-500 hover:border-sky-200">
+            <div className="glass-card rounded-2xl p-8 h-full transition-all duration-500 hover:border-sky-200 flex flex-col items-center text-center md:items-start md:text-left">
                 <div
                     className={`absolute -inset-[1px] rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm -z-10 ${gradient}`}
                 />
@@ -99,7 +99,7 @@ const About = () => {
     ];
 
     return (
-        <section id="about" className="py-16 relative overflow-hidden">
+        <section id="about" className="pt-0 pb-[35px] relative overflow-hidden">
             <div className="container mx-auto px-6 md:px-12 relative z-10 max-w-6xl">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
