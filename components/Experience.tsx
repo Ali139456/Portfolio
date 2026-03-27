@@ -218,7 +218,7 @@ const Experience = () => {
                                                         {exp.achievements.map((line, i) => (
                                                             <li
                                                                 key={i}
-                                                                className="flex flex-col items-center gap-2 text-center text-sm leading-relaxed text-slate-600 font-space sm:flex-row sm:items-start sm:gap-3 sm:text-left sm:text-[0.9375rem]"
+                                                                className="flex flex-row items-start gap-3 text-left text-sm leading-relaxed text-slate-600 font-space sm:text-[0.9375rem]"
                                                             >
                                                                 <span
                                                                     className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br ${exp.nodeFrom} ${exp.nodeVia} ${exp.nodeTo} shadow-sm`}
