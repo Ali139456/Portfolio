@@ -3,6 +3,14 @@ import { Resend } from 'resend';
 
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
+function escapeHtml(text: string) {
+    return text
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+}
+
 export async function POST(request: Request) {
     try {
         const { name, email, message } = await request.json();
@@ -32,18 +40,27 @@ export async function POST(request: Request) {
             );
         }
 
+        const from =
+            process.env.RESEND_FROM?.trim() ||
+            'Portfolio Contact <onboarding@resend.dev>';
+        const to = process.env.CONTACT_TO_EMAIL?.trim() || 'alimirza0006@gmail.com';
+
+        const safeName = escapeHtml(String(name).trim());
+        const safeEmail = escapeHtml(String(email).trim());
+        const safeMessage = escapeHtml(String(message).trim()).replace(/\n/g, '<br>');
+
         // Send email using Resend
         const data = await resend.emails.send({
-            from: 'Portfolio Contact <onboarding@resend.dev>', // Use your verified domain or onboarding domain
-            to: 'alimirza0006@gmail.com',
+            from,
+            to,
             replyTo: email,
-            subject: `Portfolio Contact from ${name}`,
+            subject: `Portfolio contact from ${String(name).trim().slice(0, 120)}`,
             html: `
-                <h2>New Contact Form Submission</h2>
-                <p><strong>Name:</strong> ${name}</p>
-                <p><strong>Email:</strong> ${email}</p>
+                <h2>New contact form submission</h2>
+                <p><strong>Name:</strong> ${safeName}</p>
+                <p><strong>Email:</strong> ${safeEmail}</p>
                 <p><strong>Message:</strong></p>
-                <p>${message.replace(/\n/g, '<br>')}</p>
+                <p>${safeMessage}</p>
             `,
         });
 

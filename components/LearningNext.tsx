@@ -9,7 +9,7 @@ const goals = [
         icon: <Smartphone size={26} />,
         title: "Mobile app development",
         description:
-            "Shipping native-quality experiences on iOS and Android—performance, gestures, offline-aware flows, and store-ready polish.",
+            "Shipping native-quality experiences on iOS and Android: performance, gestures, offline-aware flows, and store-ready polish.",
     },
     {
         icon: <BookOpen size={26} />,
@@ -21,7 +21,7 @@ const goals = [
         icon: <Target size={26} />,
         title: "Why it’s the next target",
         description:
-            "Web is home base; apps let the same product thinking meet users in their pocket—push, deep links, and habits that live outside the browser.",
+            "Web is home base; apps let the same product thinking meet users in their pocket with push, deep links, and habits that live outside the browser.",
     },
 ];
 
@@ -48,7 +48,7 @@ const LearningNext = () => {
                         Next up: <span className="holo-text">app development</span>
                     </h2>
                     <p className="text-slate-600 max-w-2xl mx-auto font-space text-lg leading-relaxed">
-                        I’m doubling down on mobile—turning full-stack and product instincts into apps people open every day, not just visit in a tab.
+                        I’m doubling down on mobile, turning full-stack and product instincts into apps people open every day, not just visit in a tab.
                     </p>
                 </motion.div>
 

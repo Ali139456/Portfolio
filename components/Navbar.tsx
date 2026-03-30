@@ -55,7 +55,7 @@ const Navbar = () => {
                         <div className="absolute -inset-4 bg-sky-400/10 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     </Link>
 
-                    {/* Centered glass nav — desktop */}
+                    {/* Centered glass nav, desktop */}
                     <div className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 md:block z-[101]">
                         <div
                             className={`flex items-center gap-0.5 rounded-full border px-2 py-1.5 backdrop-blur-2xl backdrop-saturate-150 ring-1 transition-all duration-500 ${glassNavClass}`}

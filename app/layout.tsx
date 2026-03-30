@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Muhammad Ali Shibli | Full-Stack Developer",
   description:
-    "Full-stack developer building MERN apps, Next.js sites, Shopify & WIX experiences—secure APIs, fast UI, and production-ready delivery.",
+    "Full-stack developer building MERN apps, Next.js sites, Shopify & WIX experiences: secure APIs, fast UI, and production-ready delivery.",
 };
 
 export default function RootLayout({

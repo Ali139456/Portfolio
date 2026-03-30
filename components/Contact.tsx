@@ -99,7 +99,7 @@ const Contact = () => {
                         Let&apos;s <span className="holo-text">build something</span>
                     </h2>
                     <p className="text-slate-600 font-space text-lg max-w-xl mx-auto">
-                        Full-stack web, Shopify/WIX, or API work—send a short note and I&apos;ll reply within a day.
+                        Full-stack web, Shopify/WIX, or API work. Send a short note and I&apos;ll reply within a day.
                     </p>
                 </motion.div>
 

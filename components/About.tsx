@@ -79,7 +79,7 @@ const About = () => {
             icon: <Code2 size={28} />,
             title: "Full-stack web",
             description:
-                "MERN & Next.js apps with REST APIs, auth-ready patterns, and UI that stays fast on real devices—not just demos.",
+                "MERN & Next.js apps with REST APIs, auth-ready patterns, and UI that stays fast on real devices, not just demos.",
             gradient: "bg-gradient-to-r from-sky-200/40 to-indigo-200/40",
         },
         {
@@ -93,7 +93,7 @@ const About = () => {
             icon: <ShieldCheck size={28} />,
             title: "Security-aware delivery",
             description:
-                "Background in cyber security & OSINT—sensible validation, safer defaults, and fewer surprises in production.",
+                "Background in cyber security & OSINT: sensible validation, safer defaults, and fewer surprises in production.",
             gradient: "bg-gradient-to-r from-violet-200/40 to-fuchsia-200/40",
         },
     ];
@@ -120,7 +120,7 @@ const About = () => {
                         Code that ships. <span className="holo-text">UX that feels right.</span>
                     </h2>
                     <p className="text-slate-600 max-w-2xl mx-auto font-space text-lg leading-relaxed">
-                        I&apos;m a full-stack developer with a cyber security foundation—building scalable web apps, polished
+                        I&apos;m a full-stack developer with a cyber security foundation, building scalable web apps, polished
                         commerce experiences, and integrations that hold up when traffic hits.
                     </p>
                 </motion.div>

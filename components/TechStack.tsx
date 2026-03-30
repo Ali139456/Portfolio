@@ -94,7 +94,7 @@ const highlights = [
     },
     {
         title: "Database",
-        body: "MongoDB & Postgres/Supabase patterns—indexes, auth hooks, and sensible schemas.",
+        body: "MongoDB & Postgres/Supabase patterns: indexes, auth hooks, and sensible schemas.",
         accent: "from-emerald-500 to-cyan-500",
     },
     {
@@ -127,7 +127,7 @@ const TechStack = () => {
                         From first pixel to <span className="holo-text">last deploy</span>
                     </h2>
                     <p className="text-slate-600 max-w-2xl mx-auto font-space text-lg leading-relaxed">
-                        Battle-tested tools I reach for daily—so client builds and side projects ship fast, stay
+                        Battle-tested tools I reach for daily, so client builds and side projects ship fast, stay
                         maintainable, and don&apos;t fall over when traffic shows up.
                     </p>
                 </motion.div>

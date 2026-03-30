@@ -21,7 +21,7 @@ const Experience = () => {
         {
             title: "Full-Stack Developer",
             company: "Digitalis Global",
-            duration: "Dec 2025 – Present",
+            duration: "Dec 2025 to Present",
             achievements: [
                 "Build and maintain full-stack web apps with the MERN stack.",
                 "Customize and optimize Shopify and WIX sites for international clients.",
@@ -38,7 +38,7 @@ const Experience = () => {
         {
             title: "Research Officer (Frontend & OSINT)",
             company: "Private firm",
-            duration: "Jan 2024 – Sep 2025",
+            duration: "Jan 2024 to Sep 2025",
             achievements: [
                 "Developed structured, responsive frontend interfaces.",
                 "Conducted OSINT research and open-source intelligence gathering.",
@@ -95,7 +95,7 @@ const Experience = () => {
                         <span className="holo-text">built & shipped</span>
                     </h2>
                     <p className="mx-auto max-w-xl text-base leading-relaxed text-slate-600 md:text-lg font-space">
-                        High-impact roles across product engineering and research—shipping fast, staying secure.
+                        High-impact roles across product engineering and research: shipping fast, staying secure.
                     </p>
                 </motion.div>
 
@@ -167,7 +167,7 @@ const Experience = () => {
                                         </motion.div>
                                     </div>
 
-                                    {/* Card shell — gradient border */}
+                                    {/* Card shell, gradient border */}
                                     <div className="min-w-0 flex-1">
                                         <motion.div
                                             whileHover={{ y: -4 }}

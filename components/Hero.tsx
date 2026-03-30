@@ -122,11 +122,11 @@ const Hero = () => {
                         >
                             <p className="text-lg md:text-xl text-slate-600 font-medium font-space leading-relaxed">
                                 <span className="text-slate-900 font-semibold">Full-stack developer</span> with{" "}
-                                <span className="text-slate-900 font-semibold">3+ years</span> of experience — I ship fast
+                                <span className="text-slate-900 font-semibold">3+ years</span> of experience. I ship fast
                                 web apps with the MERN stack, Next.js, and polished Shopify / WIX builds for global clients.
                             </p>
                             <p className="text-slate-500 text-base mt-3 block">
-                                APIs, databases, payments & performance—without sacrificing clean UI.
+                                APIs, databases, payments & performance, without sacrificing clean UI.
                             </p>
                         </motion.div>
 
