@@ -30,21 +30,11 @@ const contactDividerPairClass =
 const contactValuePairClass =
     "text-[10px] sm:text-xs text-slate-600 font-medium font-space leading-none whitespace-nowrap";
 
-const HERO_HEADING_LINE1_PARTS: { text: string; className: string }[] = [
+/** Word-level motion only: per-letter spans break link previews (e.g. WhatsApp joins each char with spaces). */
+const HERO_LINE1_WORDS: { text: string; className: string }[] = [
     { text: "Muhammad", className: "text-slate-900" },
-    { text: " ", className: "text-slate-900" },
     { text: "Ali", className: "text-slate-900" },
 ];
-
-const HERO_HEADING_LINE2_PARTS: { text: string; className: string }[] = [{ text: "Shibli", className: "holo-text" }];
-
-const HERO_LINE1_CHARS: { char: string; className: string }[] = HERO_HEADING_LINE1_PARTS.flatMap((part) =>
-    Array.from(part.text, (char) => ({ char, className: part.className })),
-);
-
-const HERO_LINE2_CHARS: { char: string; className: string }[] = HERO_HEADING_LINE2_PARTS.flatMap((part) =>
-    Array.from(part.text, (char) => ({ char, className: part.className })),
-);
 
 const HERO_LETTER_STAGGER = 0.09;
 const HERO_LETTER_BASE_DELAY = 0.22;
@@ -73,11 +63,10 @@ const Hero = () => {
                         </motion.div>
 
                         <h1 className="mb-6 w-full max-w-full overflow-visible pb-1 text-5xl font-bold tracking-tighter leading-[1.08] font-space sm:text-6xl sm:leading-[1.06] md:text-7xl md:leading-[1.05] lg:text-8xl lg:leading-[1.04]">
-                            <span className="sr-only">Muhammad Ali Shibli</span>
                             <span className="block w-full overflow-visible">
-                                {HERO_LINE1_CHARS.map((item, i) => (
+                                {HERO_LINE1_WORDS.map((word, i) => (
                                     <motion.span
-                                        key={`hero-l1-${i}`}
+                                        key={word.text}
                                         initial={{ opacity: 0, y: 28 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{
@@ -85,32 +74,27 @@ const Hero = () => {
                                             duration: HERO_LETTER_DURATION,
                                             ease: HERO_LETTER_EASE,
                                         }}
-                                        className={`inline-block overflow-visible align-baseline ${item.className}`}
-                                        aria-hidden
+                                        className={`inline-block overflow-visible align-baseline ${word.className} ${i > 0 ? "ml-[0.2em] sm:ml-[0.28em]" : ""}`}
                                     >
-                                        {item.char === " " ? "\u00A0" : item.char}
+                                        {word.text}
                                     </motion.span>
                                 ))}
                             </span>
                             <span className="mt-1 block w-full overflow-visible sm:mt-1.5">
-                                {HERO_LINE2_CHARS.map((item, i) => (
-                                    <motion.span
-                                        key={`hero-l2-${i}`}
-                                        initial={{ opacity: 0, y: 28 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        transition={{
-                                            delay:
-                                                HERO_LETTER_BASE_DELAY +
-                                                (HERO_LINE1_CHARS.length + i) * HERO_LETTER_STAGGER,
-                                            duration: HERO_LETTER_DURATION,
-                                            ease: HERO_LETTER_EASE,
-                                        }}
-                                        className={`inline-block overflow-visible align-baseline px-[0.5px] ${item.className}`}
-                                        aria-hidden
-                                    >
-                                        {item.char}
-                                    </motion.span>
-                                ))}
+                                <motion.span
+                                    initial={{ opacity: 0, y: 28 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{
+                                        delay:
+                                            HERO_LETTER_BASE_DELAY +
+                                            HERO_LINE1_WORDS.length * HERO_LETTER_STAGGER,
+                                        duration: HERO_LETTER_DURATION,
+                                        ease: HERO_LETTER_EASE,
+                                    }}
+                                    className="inline-block overflow-visible align-baseline holo-text"
+                                >
+                                    Shibli
+                                </motion.span>
                             </span>
                         </h1>
 
