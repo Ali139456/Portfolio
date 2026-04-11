@@ -16,10 +16,33 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://alishibli.site";
+
+const titleDefault = "Muhammad Ali Shibli | Full-Stack Developer";
+const description =
+  "Full-stack developer building MERN apps, Next.js sites, Shopify & WIX experiences: secure APIs, fast UI, and production-ready delivery.";
+
 export const metadata: Metadata = {
-  title: "Muhammad Ali Shibli | Full-Stack Developer",
-  description:
-    "Full-stack developer building MERN apps, Next.js sites, Shopify & WIX experiences: secure APIs, fast UI, and production-ready delivery.",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: titleDefault,
+    template: "%s | Muhammad Ali Shibli",
+  },
+  description,
+  applicationName: "Portfolio",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "/",
+    siteName: new URL(siteUrl).hostname.replace(/^www\./, ""),
+    title: titleDefault,
+    description,
+  },
+  twitter: {
+    card: "summary",
+    title: titleDefault,
+    description,
+  },
 };
 
 export default function RootLayout({

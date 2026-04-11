@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { liveProductsData } from "@/data/products";
 import { notFound } from "next/navigation";
 import Link from "next/link";
@@ -5,6 +6,28 @@ import { ArrowLeft, ExternalLink, CheckCircle, Activity, Sparkles } from "lucide
 
 interface Props {
     params: Promise<{ slug: string }>;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { slug } = await params;
+    const project = liveProductsData.find((p) => p.slug === slug);
+    if (!project) {
+        return { title: "Case study" };
+    }
+    const pageTitle = `${project.name} | Muhammad Ali Shibli`;
+    return {
+        title: project.name,
+        description: project.description,
+        openGraph: {
+            title: pageTitle,
+            description: project.description,
+            url: `/live-products/${slug}`,
+        },
+        twitter: {
+            title: pageTitle,
+            description: project.description,
+        },
+    };
 }
 
 export async function generateStaticParams() {
